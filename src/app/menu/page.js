@@ -1,10 +1,12 @@
 "use client";
 import { use, useEffect, useState } from "react";
+
 import Header from "../components/layout/Header";
 import SectionHeaders from "../components/layout/SectionHeaders";
 import CartProduct from "../components/menu/CartProduct";
 import MenuItem from "../components/menu/MenuItem";
-import CartProduct from "../components/menu/CartProduct";
+
+
 
 export default function MenuPage(){
     const [categories, setCategories] = useState([]);
