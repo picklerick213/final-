@@ -2,7 +2,7 @@
 import { CartContext, cartProductPrice } from "@/app/components/AppContext";
 import AddressInputs from "@/app/components/layout/AddressInputs";
 import SectionHeaders from "@/app/components/layout/SectionHeaders";
-import CartProduct from "@/app/menu/CartProduct";
+import CartProduct from "@/app/components/menu/CartProduct";
 import { useParams } from "next/router"; // Updated import
 
 import { useContext, useEffect, useState } from "react";
