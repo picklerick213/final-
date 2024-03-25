@@ -1,22 +1,19 @@
-import React from "react";
-import { useProfile } from '../components/UseProfile';
+User
+import { useEffect, useState } from "react";
 
-function useProfile() { // Renamed the component function to ProfileComponent
-    const { loading, data } = useProfile();
+export function useProfile() {
+    const [data, setData] = useState(false);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setLoading(true)
+        fetch('/api/profile').then(response => {
+            response.json().then(data => {
+                setData(data);
+                setLoading(false);
+            });
+        })
+    },[]);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
 
-    // Render profile data once loaded
-    return (
-        <div>
-            <h2>Profile</h2>
-            <p>Name: {data.name}</p>
-            <p>Email: {data.email}</p>
-            {/* Other profile details */}
-        </div>
-    );
-}
-
-export default useProfile;
+    return {loading, data};
+} 
