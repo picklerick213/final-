@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import UserTabs from "../components/layout/UserTabs";
-import {useProfile} from "../components/UseProfile";
+import {useProfile} from "@/app/components/UseProfile";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import DeleteButton from "@/app/components/DeleteButton";
