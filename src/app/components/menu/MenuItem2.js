@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from 'next/image';
+
 export default function MenuItem2({image,name}){
     return(
         <Link href={''}>
