@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useClient } from "next/client"; // Import useClient hook from Next.js
 import Header from "../components/layout/Header";
 import SectionHeaders from "../components/layout/SectionHeaders";
@@ -11,11 +11,8 @@ import OrderPopUp from "@/app/components/OrderPopup";
 
 export default function CartPage({ isAdmin }) {
   const { cartProducts, removeCartProduct } = useContext(CartContext);
-  const [address, setAddress] = useState({});
   const { data: profileData } = useProfile();
   const { useClient } = useClient(); // Use useClient hook
-
-  useClient();
 
   useEffect(() => {
     if (profileData?.city) {
