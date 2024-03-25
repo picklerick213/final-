@@ -1,7 +1,7 @@
 import React from "react";
 import { useProfile } from '../components/UseProfile';
 
-function UseProfile() {
+function useProfile() { // Renamed the component function to ProfileComponent
     const { loading, data } = useProfile();
 
     if (loading) {
@@ -19,4 +19,4 @@ function UseProfile() {
     );
 }
 
-export default ProfileComponent;
+export default useProfile;
