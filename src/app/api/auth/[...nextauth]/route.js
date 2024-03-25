@@ -5,7 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "@/libs/mongoConnect";
-import { isAdmin } from "@/app/route"; // Import isAdmin function
+import { isAdmin } from "./src/app/api/auth/[...nextauth]/route"; // Import isAdmin function
 
 export const authOptions = {
   secret: process.env.SECRET,
