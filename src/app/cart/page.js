@@ -1,3 +1,5 @@
+'use client'
+
 import { useContext } from "react";
 import { useClient } from "next/client"; // Import useClient hook from Next.js
 import Header from "../components/layout/Header";
