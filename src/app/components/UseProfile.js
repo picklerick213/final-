@@ -1,5 +1,7 @@
 // @/app/components/UseProfile.js
 
+'use client'; // Mark the component as a client-side component
+
 import { useEffect, useState } from "react";
 
 export function useProfile() {
