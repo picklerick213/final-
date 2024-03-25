@@ -1,7 +1,7 @@
 import React from "react";
 import { useProfile } from '../components/UseProfile';
 
-function ProfileComponent() {
+function useProfile() {
     const { loading, data } = useProfile();
 
     if (loading) {
