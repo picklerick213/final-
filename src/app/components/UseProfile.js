@@ -1,5 +1,4 @@
 import React from "react";
-import { useProfile } from '@/app/components/useProfile';
 
 
 function ProfileComponent() {
