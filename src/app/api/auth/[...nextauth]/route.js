@@ -61,4 +61,13 @@ export async function isAdmin(req) {
 
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST }
+export default async function route(req, res) {
+  try {
+    const isAdminUser = await isAdmin(req); // Check if the user is an admin
+    // Handle the API request here
+    res.status(200).json({ message: 'Hello from the API route!', isAdmin: isAdminUser });
+  } catch (error) {
+    console.error("Error handling API request:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
