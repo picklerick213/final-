@@ -1,14 +1,17 @@
 'use client';
-import {useParams} from "next/navigation";
-import {useContext, useEffect, useState} from "react";
+import { CartContext, cartProductPrice } from "@/app/components/AppContext";
+import AddressInputs from "@/app/components/layout/AddressInputs";
+import SectionHeaders from "@/app/components/layout/SectionHeaders";
+import CartProduct from "@/app/menu/CartProduct";
+import { useParams } from "next/router"; // Updated import
 
-
+import { useContext, useEffect, useState } from "react";
 
 export default function OrderPage() {
-  const {clearCart} = useContext(CartContext);
+  const { clearCart } = useContext(CartContext);
   const [order, setOrder] = useState();
   const [loadingOrder, setLoadingOrder] = useState(true);
-  const {id} = useParams();
+  const { id } = useParams();
   useEffect(() => {
     if (typeof window.console !== "undefined") {
       if (window.location.href.includes('clear-cart=1')) {
@@ -17,14 +20,14 @@ export default function OrderPage() {
     }
     if (id) {
       setLoadingOrder(true);
-      fetch('/api/orders?_id='+id).then(res => {
+      fetch('/api/orders?_id=' + id).then(res => {
         res.json().then(orderData => {
           setOrder(orderData);
           setLoadingOrder(false);
         });
       })
     }
-  }, []);
+  }, [clearCart, id]); // Added clearCart and id as dependencies
 
   let subtotal = 0;
   if (order?.cartProducts) {
