@@ -1,4 +1,5 @@
 import React from "react";
+import { useProfile } from '../components/UseProfile';
 
 function ProfileComponent() {
     const { loading, data } = useProfile();
