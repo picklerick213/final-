@@ -53,6 +53,8 @@ export async function isAdmin() {
   }
   return userInfo.admin;
 }
-const handler = NextAuth(authOptions)
+export default function handler(req, res) {
+  // Handle the API request here
+  res.status(200).json({ message: 'Hello from the API route!' });
+}
 
-export { handler as GET, handler as POST }
